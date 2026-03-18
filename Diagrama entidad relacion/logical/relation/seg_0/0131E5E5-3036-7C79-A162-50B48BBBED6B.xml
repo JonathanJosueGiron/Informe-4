@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relacion_usuario_curso" directorySegmentName="seg_0" id="0131E5E5-3036-7C79-A162-50B48BBBED6B">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 20:43:45 UTC</createdTime>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<engineerTo>
+<item key="38325037-0995-3371-583E-870B48589370" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>90A883B5-F4B9-1A06-389F-8C8389475607</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>56715F9F-CF0D-6FC2-2F11-A3A29423FB01</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

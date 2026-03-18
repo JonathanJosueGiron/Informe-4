@@ -1,0 +1,84 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2FC29A8E-E760-2932-70E2-36362F36EF76" name="USUARIO">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>90A883B5-F4B9-1A06-389F-8C8389475607</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_usuario" id="353EF1D6-2144-DE58-1637-73B8F3C44E31">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>1F60CCBD-C874-E6BC-D452-BE680E7200F1</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>13 CHAR</dataTypeSize>
+<ownDataTypeParameters>13 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="3C2EF352-F9B6-EF1A-1A09-653B59FBF747">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>FDD17263-EE39-7DE4-F8F6-191A27872062</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>250,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="edad" id="981C2858-82DA-21C5-A184-9C96B58A85B6">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>319F6216-AE66-F5DF-6DAA-736C61306482</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="contraseña" id="6A03CD7A-E4FC-2046-5B22-FF8595CDBAFB">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>E8555174-9850-A937-6B77-7E30458D2014</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tiempo" id="8CC80032-AC1B-1EEB-2415-818F69CDE742">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>ACC0F923-C921-BE7D-2A30-F7F1FDE0EBEF</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D7EC7393-D8A6-910D-7853-BF55155831B6" name="USUARIO_PK">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>1642FAD7-36B9-BE37-A479-CC363E233A84</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="353EF1D6-2144-DE58-1637-73B8F3C44E31"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

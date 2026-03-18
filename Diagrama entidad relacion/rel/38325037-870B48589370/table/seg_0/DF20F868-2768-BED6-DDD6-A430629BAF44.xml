@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DF20F868-2768-BED6-DDD6-A430629BAF44" name="CURSO_APR">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>F8F1EE02-0754-6DFD-4DC0-7C1022B377E3</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_curso_apr" id="6C610F6A-226A-FBDB-8BE9-3E573AEB1754">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>78ADCF92-4644-DEBD-1FA2-2D9862E6A397</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="40C9EC7B-73B5-8CA8-96EF-1C6141E6AD6A">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>FA01B17D-2E37-26B7-BD1C-A78B9765DD36</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>250,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="creditos" id="BC6495BF-28A2-2416-D3C7-0E072F102514">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>2135FB77-8DEF-1C23-3401-F3780B5C7994</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="56ED9689-D425-7AEC-C89E-7946A09EC6EA" name="CURSO_APROBADO_PK">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>FB2567D5-B570-F10F-3BCF-82FFAE6BACA6</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6C610F6A-226A-FBDB-8BE9-3E573AEB1754"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

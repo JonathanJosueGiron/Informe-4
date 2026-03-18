@@ -1,0 +1,148 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1D5289CC-8AD8-DC52-E184-68B5D2CFF1A6" name="COMENTARIO">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>4360448E-FE5B-0B4C-EE54-F3C06065F6AB</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_comentario" id="B8FBD284-D1BA-8F2B-1A57-6FE8D2D386F5">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>136EF623-8C24-F620-C370-EF116702AFFE</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="mensaje" id="D46657EB-52DE-9DCA-5762-E2CD75D4F31B">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>AF41BA7F-6A23-27FF-45C3-E9ECAF7ACACB</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1000</dataTypeSize>
+<ownDataTypeParameters>1000,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="USUARIO_id_usuario" id="119B8D8C-236D-7541-C400-E02B5D00E4B9">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>F6D880FE-D945-D025-199E-2D54D91B0C8A</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>13 CHAR</dataTypeSize>
+<ownDataTypeParameters>13 CHAR,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1BC30889-24EF-D1E2-5C31-E633AD95F170" referredColumn="353EF1D6-2144-DE58-1637-73B8F3C44E31"/>
+</associations>
+</Column>
+<Column name="CATEDRATICO_CURSO_id_curso" id="A8CFE667-574C-015C-3D52-6BB2EAD5683D">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>4BA3E3CD-7036-3644-0C73-4E4ABF031B12</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="06D43C09-C58A-C8CD-EC17-6CCC90993E05" referredColumn="B8F3DC76-2600-476D-2850-CFEA2ED23930"/>
+</associations>
+</Column>
+<Column name="CATEDRATICO_id_catedratico" id="088AF35C-5081-55B5-9E68-D7548FD49E28">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>3E90BC1B-A2E2-B317-AF72-41E15BCD819F</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>13 CHAR</dataTypeSize>
+<ownDataTypeParameters>13 CHAR,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="06D43C09-C58A-C8CD-EC17-6CCC90993E05" referredColumn="499E0077-BD27-47AE-6653-920E21AA04F3"/>
+</associations>
+</Column>
+<Column name="PUBLICACION_id_publicacion" id="9565C5E4-4749-7F7E-C672-26F0F9F663D5">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>34836C6E-1D97-FF77-7DA3-3B4CBC017DF7</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F49FA81A-89C7-C4BB-053F-B192A2584C15" referredColumn="59C737CE-ADCA-F0D4-A516-8D0C5D97E997"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="80C3D75B-167F-8351-BBCA-42B838941D8B" name="COMENTARIO_PK">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>F69392FC-91C9-5C4E-5F8A-E87A5D28EF12</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B8FBD284-D1BA-8F2B-1A57-6FE8D2D386F5"/>
+<colUsage columnID="A8CFE667-574C-015C-3D52-6BB2EAD5683D"/>
+<colUsage columnID="088AF35C-5081-55B5-9E68-D7548FD49E28"/>
+<colUsage columnID="9565C5E4-4749-7F7E-C672-26F0F9F663D5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E898DA4C-57C4-7CE0-3624-2605889CFDD4" name="COMENTARIO_CATEDRATICO_FK">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>A6F97BE0-80B3-5654-DF0E-BD09F5165CD1</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A8CFE667-574C-015C-3D52-6BB2EAD5683D"/>
+<colUsage columnID="088AF35C-5081-55B5-9E68-D7548FD49E28"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="21DD084C-2DE3-21B9-6B8A-7E3267A13582" name="COMENTARIO_PUBLICACION_FK">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>8D491E8C-BF7E-A034-ACAC-85EE50F7A60A</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9565C5E4-4749-7F7E-C672-26F0F9F663D5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3A47F7B0-230E-FBE7-DDBD-C4B02D927860" name="COMENTARIO_USUARIO_FK">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>B829EAB6-E337-854A-D2C0-BEA16520E9A2</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="119B8D8C-236D-7541-C400-E02B5D00E4B9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

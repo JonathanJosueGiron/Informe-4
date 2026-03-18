@@ -1,0 +1,119 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4360448E-FE5B-0B4C-EE54-F3C06065F6AB" name="COMENTARIO">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 20:26:14 UTC</createdTime>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<engineerTo>
+<item key="38325037-0995-3371-583E-870B48589370" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_comentario" id="136EF623-8C24-F620-C370-EF116702AFFE">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:05:49 UTC</createdTime>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<engineerTo>
+<item key="38325037-0995-3371-583E-870B48589370" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="mensaje" id="AF41BA7F-6A23-27FF-45C3-E9ECAF7ACACB">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:06:05 UTC</createdTime>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<engineerTo>
+<item key="38325037-0995-3371-583E-870B48589370" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1000</dataTypeSize>
+<ownDataTypeParameters>1000,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_usuario" id="F6D880FE-D945-D025-199E-2D54D91B0C8A">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:07:06 UTC</createdTime>
+<generatorID>B829EAB6-E337-854A-D2C0-BEA16520E9A2</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<engineerTo>
+<item key="38325037-0995-3371-583E-870B48589370" value="true"/>
+</engineerTo>
+<referedAttribute>1F60CCBD-C874-E6BC-D452-BE680E7200F1</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>13 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_curso" id="4BA3E3CD-7036-3644-0C73-4E4ABF031B12">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:07:27 UTC</createdTime>
+<generatorID>A6F97BE0-80B3-5654-DF0E-BD09F5165CD1</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<engineerTo>
+<item key="38325037-0995-3371-583E-870B48589370" value="true"/>
+</engineerTo>
+<referedAttribute>F46D7A66-5CAB-110A-E04C-4596AA3B33FE</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_catedratico" id="3E90BC1B-A2E2-B317-AF72-41E15BCD819F">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:07:27 UTC</createdTime>
+<generatorID>A6F97BE0-80B3-5654-DF0E-BD09F5165CD1</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<engineerTo>
+<item key="38325037-0995-3371-583E-870B48589370" value="true"/>
+</engineerTo>
+<referedAttribute>5E7E2F2A-196E-FCC3-D077-C07C69BF1E58</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>13 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_publicacion" id="34836C6E-1D97-FF77-7DA3-3B4CBC017DF7">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:08:31 UTC</createdTime>
+<generatorID>8D491E8C-BF7E-A034-ACAC-85EE50F7A60A</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<engineerTo>
+<item key="38325037-0995-3371-583E-870B48589370" value="true"/>
+</engineerTo>
+<referedAttribute>771F4BCE-493D-65B3-D957-30CC4444008B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="F69392FC-91C9-5C4E-5F8A-E87A5D28EF12" name="COMENTARIO PK">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:06:04 UTC</createdTime>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<engineerTo>
+<item key="38325037-0995-3371-583E-870B48589370" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>136EF623-8C24-F620-C370-EF116702AFFE</attributeRef>
+<attributeRef>4BA3E3CD-7036-3644-0C73-4E4ABF031B12</attributeRef>
+<attributeRef>3E90BC1B-A2E2-B317-AF72-41E15BCD819F</attributeRef>
+<attributeRef>34836C6E-1D97-FF77-7DA3-3B4CBC017DF7</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

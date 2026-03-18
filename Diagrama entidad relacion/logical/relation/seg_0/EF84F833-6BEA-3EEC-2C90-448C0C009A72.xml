@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relacion_curso_catedratico" directorySegmentName="seg_0" id="EF84F833-6BEA-3EEC-2C90-448C0C009A72">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 20:52:22 UTC</createdTime>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<engineerTo>
+<item key="38325037-0995-3371-583E-870B48589370" value="true"/>
+</engineerTo>
+<sourcePk>4EE55686-185F-ECF3-F536-505B5401AC62</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>56715F9F-CF0D-6FC2-2F11-A3A29423FB01</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>81C26526-461D-818D-7A1A-3A80087C60E0</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

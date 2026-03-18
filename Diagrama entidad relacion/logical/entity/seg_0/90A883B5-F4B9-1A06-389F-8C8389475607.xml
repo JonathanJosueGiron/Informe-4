@@ -1,0 +1,97 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="90A883B5-F4B9-1A06-389F-8C8389475607" name="USUARIO">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 20:25:30 UTC</createdTime>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<engineerTo>
+<item key="38325037-0995-3371-583E-870B48589370" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_usuario" id="1F60CCBD-C874-E6BC-D452-BE680E7200F1">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 20:30:30 UTC</createdTime>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<engineerTo>
+<item key="38325037-0995-3371-583E-870B48589370" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>13 CHAR</dataTypeSize>
+<ownDataTypeParameters>13 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="FDD17263-EE39-7DE4-F8F6-191A27872062">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 20:35:56 UTC</createdTime>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<engineerTo>
+<item key="38325037-0995-3371-583E-870B48589370" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>250,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="edad" id="319F6216-AE66-F5DF-6DAA-736C61306482">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 20:44:39 UTC</createdTime>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<engineerTo>
+<item key="38325037-0995-3371-583E-870B48589370" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="contraseña" id="E8555174-9850-A937-6B77-7E30458D2014">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:00:29 UTC</createdTime>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<engineerTo>
+<item key="38325037-0995-3371-583E-870B48589370" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tiempo" id="ACC0F923-C921-BE7D-2A30-F7F1FDE0EBEF">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 20:45:00 UTC</createdTime>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<engineerTo>
+<item key="38325037-0995-3371-583E-870B48589370" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="1642FAD7-36B9-BE37-A479-CC363E233A84" name="USUARIO PK">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 20:31:03 UTC</createdTime>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="38325037-0995-3371-583E-870B48589370" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>1F60CCBD-C874-E6BC-D452-BE680E7200F1</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

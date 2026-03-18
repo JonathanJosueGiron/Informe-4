@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B9824A20-BDCB-D6EB-AFDA-15D42F98013A" name="Rel_usuario_c_apr">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<ordsAlias>relacion_usuario_curso_aprobado</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="USUARIO_id_usuario" id="A43ADBB3-5CBC-9F0F-BD1E-35E90595F5FE">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>13 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C13937AB-FBC4-C412-3ABF-E4535B0214EB" referredColumn="353EF1D6-2144-DE58-1637-73B8F3C44E31"/>
+</associations>
+</Column>
+<Column name="CURSO_APR_id_curso_apr" id="96079492-6481-5A6C-EDE9-3EDE53CE3532">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="604CAB19-E4EC-D0F7-DCDA-6D464E6A9357" referredColumn="6C610F6A-226A-FBDB-8BE9-3E573AEB1754"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="226AAB1C-1705-2A3B-D255-5D47EFA60473" name="Rel_usuario_c_apr_PK">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A43ADBB3-5CBC-9F0F-BD1E-35E90595F5FE"/>
+<colUsage columnID="96079492-6481-5A6C-EDE9-3EDE53CE3532"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="083C1C84-C541-9407-C45B-FF3CF3F49455" name="Rel_usuario_c_apr_USUARIO_FK">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>776F2CED-8183-FE9B-6702-7C556B06B9B3</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A43ADBB3-5CBC-9F0F-BD1E-35E90595F5FE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AC6F79B6-56DA-4EB1-7265-7F0557F52E9A" name="Rel_usuario_c_apr_C_APR_FK">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>776F2CED-8183-FE9B-6702-7C556B06B9B3</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="96079492-6481-5A6C-EDE9-3EDE53CE3532"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

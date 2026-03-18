@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Diagrama entidad relacion" id="245961D2-0B4D-2282-4E88-916C31E5A93A" version="3.5">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 20:15:13 UTC</createdTime>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>245961D2-0B4D-2282-4E88-916C31E5A93A</designId>
+</OSDM_Design>

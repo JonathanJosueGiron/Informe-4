@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relacion_publicacion_comentario" directorySegmentName="seg_0" id="8D491E8C-BF7E-A034-ACAC-85EE50F7A60A">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:08:31 UTC</createdTime>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<engineerTo>
+<item key="38325037-0995-3371-583E-870B48589370" value="true"/>
+</engineerTo>
+<sourcePk>70DF6D6B-D8AB-E039-18AC-57916C582195</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>09DDDA07-5B24-92ED-DD59-A3E1833FE748</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>4360448E-FE5B-0B4C-EE54-F3C06065F6AB</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

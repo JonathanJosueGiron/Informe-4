@@ -1,0 +1,86 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="81C26526-461D-818D-7A1A-3A80087C60E0" name="CATEDRATICO">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 20:25:54 UTC</createdTime>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<engineerTo>
+<item key="38325037-0995-3371-583E-870B48589370" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_curso" id="F46D7A66-5CAB-110A-E04C-4596AA3B33FE">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 20:57:23 UTC</createdTime>
+<generatorID>EF84F833-6BEA-3EEC-2C90-448C0C009A72</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<engineerTo>
+<item key="38325037-0995-3371-583E-870B48589370" value="true"/>
+</engineerTo>
+<referedAttribute>5C55199A-916B-A2BA-4F66-06BE84D32F42</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_catedratico" id="5E7E2F2A-196E-FCC3-D077-C07C69BF1E58">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 20:57:38 UTC</createdTime>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<engineerTo>
+<item key="38325037-0995-3371-583E-870B48589370" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>13 CHAR</dataTypeSize>
+<ownDataTypeParameters>13 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="79FDD66B-A554-4CD2-2BB6-C5BABD105117">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:01:17 UTC</createdTime>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<engineerTo>
+<item key="38325037-0995-3371-583E-870B48589370" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250 CHAR</dataTypeSize>
+<ownDataTypeParameters>250 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="edad" id="2E7680B2-18D1-9424-5CDD-B302B6DC1300">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 20:58:01 UTC</createdTime>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<engineerTo>
+<item key="38325037-0995-3371-583E-870B48589370" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="EDB26B3E-7B33-22C6-3200-9E3B7FD573CA" name="CATEDRATICO PK">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 20:57:07 UTC</createdTime>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<engineerTo>
+<item key="38325037-0995-3371-583E-870B48589370" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>F46D7A66-5CAB-110A-E04C-4596AA3B33FE</attributeRef>
+<attributeRef>5E7E2F2A-196E-FCC3-D077-C07C69BF1E58</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

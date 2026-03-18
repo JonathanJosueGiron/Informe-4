@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="83E7CA6F-29B1-2DB9-6B40-52E80578A8E9" containerWithKeyObject="C5390314-DECB-B3B6-A474-91C7EAEC74F8" localFKIndex="08827659-A343-7120-5A15-2E1CC256EA6F" name="CATEDRATICO_CURSO_FK">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>EF84F833-6BEA-3EEC-2C90-448C0C009A72</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<referredTableLongName>CURSO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>2CE65DFD-44C1-B45E-4CD5-631E038861EF</referredTableID>
+<keyObject>56D31D5D-3223-6AFE-5FCB-E19754819222</keyObject>
+<referredKeyID>56D31D5D-3223-6AFE-5FCB-E19754819222</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_curso</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,112 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D05E349A-89A7-27E2-96EF-D31617793137" name="PUBLICACION">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>09DDDA07-5B24-92ED-DD59-A3E1833FE748</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_publicacion" id="59C737CE-ADCA-F0D4-A516-8D0C5D97E997">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>771F4BCE-493D-65B3-D957-30CC4444008B</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="titulo" id="103C1E93-5C94-876F-AF13-BDCEB91D94D1">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>105D9A39-90C9-696A-BF88-D9384F8D5408</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha" id="92F95048-CC8E-68F5-18F5-7697C24CE8A7">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>0D28DEA5-6ABC-8D0F-EDB3-FF2CDC2D16CD</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="mensaje" id="0E94ADF9-C2E3-7A0B-181E-64D7DE452A63">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>15BF3FC4-8F29-88F6-92A4-12CD9F72ED73</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1000 CHAR</dataTypeSize>
+<ownDataTypeParameters>1000 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="votos" id="9E0831DE-3943-D52F-DCB5-E9D6296EED55">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>BDF7AA80-E8CB-456E-E825-2F111E8515CF</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="USUARIO_id_usuario" id="9D9742CE-93E4-5699-E695-9245F140F28E">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>5C4FCB2B-C260-0900-4F82-EFA14716C95E</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>13 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0F95934F-4060-67BB-51B7-B4FDDC4C67C7" referredColumn="353EF1D6-2144-DE58-1637-73B8F3C44E31"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B9F13539-6CC7-D8A9-13C3-812402756FFE" name="PUBLICACION_PK">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>70DF6D6B-D8AB-E039-18AC-57916C582195</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="59C737CE-ADCA-F0D4-A516-8D0C5D97E997"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DD8D6583-9E23-6E88-2D7F-6F71A7744302" name="PUBLICACION_USUARIO_FK">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>77E0C579-7A82-293C-EE98-655EC07D6798</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9D9742CE-93E4-5699-E695-9245F140F28E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

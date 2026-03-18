@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C5390314-DECB-B3B6-A474-91C7EAEC74F8" name="CATEDRATICO">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>81C26526-461D-818D-7A1A-3A80087C60E0</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CURSO_id_curso" id="B8F3DC76-2600-476D-2850-CFEA2ED23930">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>F46D7A66-5CAB-110A-E04C-4596AA3B33FE</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="83E7CA6F-29B1-2DB9-6B40-52E80578A8E9" referredColumn="5CF0631D-F4C3-30EC-B6AC-33BDD69A264A"/>
+</associations>
+</Column>
+<Column name="id_catedratico" id="499E0077-BD27-47AE-6653-920E21AA04F3">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>5E7E2F2A-196E-FCC3-D077-C07C69BF1E58</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>13 CHAR</dataTypeSize>
+<ownDataTypeParameters>13 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="F75A600E-5E7C-10EE-FAC9-6A03E95F9319">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>79FDD66B-A554-4CD2-2BB6-C5BABD105117</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250 CHAR</dataTypeSize>
+<ownDataTypeParameters>250 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="edad" id="E26E8621-F8EC-B8DD-16D3-D30365F37768">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>2E7680B2-18D1-9424-5CDD-B302B6DC1300</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="65EDFB80-1F0F-DB34-32F9-F2596AAF2C71" name="CATEDRATICO_PK">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>EDB26B3E-7B33-22C6-3200-9E3B7FD573CA</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B8F3DC76-2600-476D-2850-CFEA2ED23930"/>
+<colUsage columnID="499E0077-BD27-47AE-6653-920E21AA04F3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="08827659-A343-7120-5A15-2E1CC256EA6F" name="CATEDRATICO_CURSO_FK">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>EF84F833-6BEA-3EEC-2C90-448C0C009A72</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B8F3DC76-2600-476D-2850-CFEA2ED23930"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="F49FA81A-89C7-C4BB-053F-B192A2584C15" containerWithKeyObject="1D5289CC-8AD8-DC52-E184-68B5D2CFF1A6" localFKIndex="21DD084C-2DE3-21B9-6B8A-7E3267A13582" name="COMENTARIO_PUBLICACION_FK">
+<createdBy>Christian</createdBy>
+<createdTime>2026-03-11 21:13:20 UTC</createdTime>
+<generatorID>8D491E8C-BF7E-A034-ACAC-85EE50F7A60A</generatorID>
+<ownerDesignName>Diagrama entidad relacion</ownerDesignName>
+<referredTableLongName>PUBLICACION</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>D05E349A-89A7-27E2-96EF-D31617793137</referredTableID>
+<keyObject>B9F13539-6CC7-D8A9-13C3-812402756FFE</keyObject>
+<referredKeyID>B9F13539-6CC7-D8A9-13C3-812402756FFE</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_publicacion</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
