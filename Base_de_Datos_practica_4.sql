@@ -8,13 +8,14 @@
 -- predefined type, no DDL - MDSYS.SDO_GEOMETRY
 
 -- predefined type, no DDL - XMLTYPE
-
+CREATE DATABASE Informe_4;
+USE Informe_4;
 CREATE TABLE CATEDRATICO 
     ( 
-     CURSO_id_curso INTEGER  NOT NULL , 
-     id_catedratico VARCHAR2 (13 CHAR)  NOT NULL , 
-     nombre         VARCHAR2 (250 CHAR)  NOT NULL , 
-     edad           INTEGER  NOT NULL 
+     CURSO_id_curso INT  NOT NULL , 
+     id_catedratico VARCHAR (13)  NOT NULL , 
+     nombre         VARCHAR (250)  NOT NULL , 
+     edad           INT  NOT NULL 
     ) 
 ;
 
@@ -23,12 +24,12 @@ ALTER TABLE CATEDRATICO
 
 CREATE TABLE COMENTARIO 
     ( 
-     id_comentario              INTEGER  NOT NULL , 
-     mensaje                    VARCHAR2 (1000)  NOT NULL , 
-     USUARIO_id_usuario         VARCHAR2 (13 CHAR)  NOT NULL , 
-     CATEDRATICO_CURSO_id_curso INTEGER  NOT NULL , 
-     CATEDRATICO_id_catedratico VARCHAR2 (13 CHAR)  NOT NULL , 
-     PUBLICACION_id_publicacion INTEGER  NOT NULL 
+     id_comentario              INT  NOT NULL , 
+     mensaje                    VARCHAR (1000)  NOT NULL , 
+     USUARIO_id_usuario         VARCHAR (13)  NOT NULL , 
+     CATEDRATICO_CURSO_id_curso INT  NOT NULL , 
+     CATEDRATICO_id_catedratico VARCHAR (13)  NOT NULL , 
+     PUBLICACION_id_publicacion INT  NOT NULL 
     ) 
 ;
 
@@ -37,9 +38,9 @@ ALTER TABLE COMENTARIO
 
 CREATE TABLE CURSO 
     ( 
-     id_curso INTEGER  NOT NULL , 
-     nombre   VARCHAR2 (250 CHAR)  NOT NULL , 
-     creditos INTEGER  NOT NULL 
+     id_curso INT  NOT NULL , 
+     nombre   VARCHAR (250)  NOT NULL , 
+     creditos INT  NOT NULL 
     ) 
 ;
 
@@ -48,9 +49,9 @@ ALTER TABLE CURSO
 
 CREATE TABLE CURSO_APR 
     ( 
-     id_curso_apr INTEGER  NOT NULL , 
-     nombre       VARCHAR2 (250)  NOT NULL , 
-     creditos     INTEGER  NOT NULL 
+     id_curso_apr INT  NOT NULL , 
+     nombre       VARCHAR (250)  NOT NULL , 
+     creditos     INT  NOT NULL 
     ) 
 ;
 
@@ -59,12 +60,12 @@ ALTER TABLE CURSO_APR
 
 CREATE TABLE PUBLICACION 
     ( 
-     id_publicacion     INTEGER  NOT NULL , 
-     titulo             VARCHAR2 (100 CHAR)  NOT NULL , 
+     id_publicacion     INT  NOT NULL , 
+     titulo             VARCHAR (100)  NOT NULL , 
      fecha              DATE  NOT NULL , 
-     mensaje            VARCHAR2 (1000 CHAR) , 
-     votos              INTEGER , 
-     USUARIO_id_usuario VARCHAR2 (13 CHAR)  NOT NULL 
+     mensaje            VARCHAR (1000) , 
+     votos              INT , 
+     USUARIO_id_usuario VARCHAR (13)  NOT NULL 
     ) 
 ;
 
@@ -73,8 +74,8 @@ ALTER TABLE PUBLICACION
 
 CREATE TABLE Rel_usuario_c_apr 
     ( 
-     USUARIO_id_usuario     VARCHAR2 (13 CHAR)  NOT NULL , 
-     CURSO_APR_id_curso_apr INTEGER  NOT NULL 
+     USUARIO_id_usuario     VARCHAR (13)  NOT NULL , 
+     CURSO_APR_id_curso_apr INT  NOT NULL 
     ) 
 ;
 
@@ -83,8 +84,8 @@ ALTER TABLE Rel_usuario_c_apr
 
 CREATE TABLE Relacion_usuario_curso 
     ( 
-     USUARIO_id_usuario VARCHAR2 (13 CHAR)  NOT NULL , 
-     CURSO_id_curso     INTEGER  NOT NULL 
+     USUARIO_id_usuario VARCHAR (13)  NOT NULL , 
+     CURSO_id_curso     INT  NOT NULL 
     ) 
 ;
 
@@ -93,11 +94,11 @@ ALTER TABLE Relacion_usuario_curso
 
 CREATE TABLE USUARIO 
     ( 
-     id_usuario VARCHAR2 (13 CHAR)  NOT NULL , 
-     nombre     VARCHAR2 (250)  NOT NULL , 
-     edad       INTEGER  NOT NULL , 
-     contraseña VARCHAR2 (100 CHAR)  NOT NULL , 
-     tiempo     INTEGER  NOT NULL 
+     id_usuario VARCHAR (13)  NOT NULL , 
+     nombre     VARCHAR (250)  NOT NULL , 
+     edad       INT  NOT NULL , 
+     contrasena VARCHAR (100)  NOT NULL , 
+     tiempo     INT  NOT NULL 
     ) 
 ;
 
