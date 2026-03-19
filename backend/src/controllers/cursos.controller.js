@@ -1,0 +1,57 @@
+import { pool } from '../db.js'
+
+// Ver todos los cursos
+export const getCourses = async (req, res) => {
+    const [rows] = await pool.query('SELECT * FROM CURSO')
+    res.json(rows)
+}
+
+// Ver un curso
+export const getCourse = async (req, res) => {
+    console.log(req.params)
+    const [rows] = await pool.query('SELECT * FROM CURSO WHERE id_curso = ?', [req.params.id_curso])
+    if (rows.length <= 0) return res.status(404).json({
+        message: "curso no encontrado."
+    })
+    res.json(rows[0])
+}
+
+// Crear un curso
+export const createCourse = async (req, res) => {
+    const {id_curso, nombre, creditos, area} = req.body
+    const [rows] = await pool.query('INSERT INTO curso (id_curso, nombre, creditos, area) VALUES (?, ?, ?, ?)', 
+     [id_curso, nombre, creditos, area], (err, result) => {
+        if (err){
+            console.error("Error: "+err)
+            return res.status(500).json(err)
+        }
+     })
+    
+    res.send({id_curso, nombre, creditos, area})
+}
+
+// Actualizar un curso
+export const updateCourse = async (req, res) => {
+    const id_curso = req.params.id_curso
+    const {nombre, creditos, area} = req.body
+    const [rows] = await pool.query('UPDATE curso SET nombre = ?, creditos = ?, area = ?', 
+     [nombre, creditos, area], (err, result) => {
+        if (err){
+            console.error("Error: "+err)
+            return res.status(500).json(err)
+        }
+     })
+    
+    res.send({id_curso, nombre, creditos, area})
+}
+
+
+// Eliminar un curso
+export const deleteCourse = async (req, res) => {
+    const [result] = await pool.query('DELETE FROM curso WHERE id_curso = ?', [req.params.id_curso])
+    console.log(result)
+    if (result.affectedRows <= 0) return res.status(404).json({
+        message: "curso no encontrado."
+    })
+    res.sendStatus(204)
+}
