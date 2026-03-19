@@ -2,7 +2,7 @@ import { pool } from '../db.js'
 
 // Ver todos los catedraticos
 export const getProfs = async (req, res) => {
-    const [rows] = await pool.query('SELECT * FROM catedratico')
+    const [rows] = await pool.query('SELECT * FROM CATEDRATICO')
     res.json(rows)
 }
 
@@ -34,8 +34,8 @@ export const createProf = async (req, res) => {
 export const updateProf = async (req, res) => {
     const id_catedratico = req.params.id_catedratico
     const {nombre, apellido, correo} = req.body
-    const [rows] = await pool.query('UPDATE CATEDRATICO SET nombre = ?, apellido = ?, correo = ?', 
-     [nombre, apellido, correo], (err, result) => {
+    const [rows] = await pool.query('UPDATE CATEDRATICO SET nombre = ?, apellido = ?, correo = ? WHERE id_catedratico = ?', 
+     [nombre, apellido, correo, id_catedratico], (err, result) => {
         if (err){
             console.error("Error: "+err)
             return res.status(500).json(err)

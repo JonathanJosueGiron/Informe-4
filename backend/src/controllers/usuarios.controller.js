@@ -33,16 +33,16 @@ export const createUser = async (req, res) => {
 // Actualizar un usuario
 export const updateUser = async (req, res) => {
     const id_usuario = req.params.id_usuario
-    const {nombre, apellido, correo, password} = req.body
-    const [rows] = await pool.query('UPDATE usuario SET nombre = ?, apellido = ?, correo = ?,password = ?', 
-     [nombre, apellido, correo, password], (err, result) => {
+    const {nombre, registro, apellido, correo, password} = req.body
+    const [rows] = await pool.query('UPDATE usuario SET registro = ?, nombre = ?, apellido = ?, correo = ?,password = ? WHERE id_usuario = ?', 
+     [registro, nombre, apellido, correo, password, id_usuario], (err, result) => {
         if (err){
             console.error("Error: "+err)
             return res.status(500).json(err)
         }
      })
     
-    res.send({id_usuario, registro, nombre, edad, password, tiempo})
+    res.send({id_usuario, nombre, registro, apellido, correo, password})
 }
 
 
