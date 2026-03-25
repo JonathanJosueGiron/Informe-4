@@ -18,16 +18,16 @@ export const getPubli = async (req, res) => {
 
 // Crear una publicacion
 export const createPubli = async (req, res) => {
-    const {id_publicacion, mensaje, fecha, USUARIO_id_usuario, CATEDRATICO_id_catedratico, CURSO_id_curso} = req.body
-    const [rows] = await pool.query('INSERT INTO PUBLICACION (id_publicacion, mensaje, fecha, USUARIO_id_usuario, CATEDRATICO_id_catedratico, CURSO_id_curso) VALUES (?, ?, ?, ?, ?, ?)', 
-     [id_publicacion, mensaje, fecha, USUARIO_id_usuario, CATEDRATICO_id_catedratico, CURSO_id_curso], (err, result) => {
+    const {mensaje, fecha, USUARIO_id_usuario, CATEDRATICO_id_catedratico, CURSO_id_curso} = req.body
+    const [rows] = await pool.query('INSERT INTO PUBLICACION (mensaje, fecha, USUARIO_id_usuario, CATEDRATICO_id_catedratico, CURSO_id_curso) VALUES (?, ?, ?, ?, ?)', 
+     [mensaje, fecha, USUARIO_id_usuario, CATEDRATICO_id_catedratico, CURSO_id_curso], (err, result) => {
         if (err){
             console.error("Error: "+err)
             return res.status(500).json(err)
         }
      })
     
-    res.send({id_publicacion, mensaje, fecha, USUARIO_id_usuario, CATEDRATICO_id_catedratico, CURSO_id_curso})
+    res.send({mensaje, fecha, USUARIO_id_usuario, CATEDRATICO_id_catedratico, CURSO_id_curso})
 }
 
 // Actualizar una publicacion
@@ -42,7 +42,7 @@ export const updatePubli = async (req, res) => {
         }
      })
     
-    res.send({id_publicacion, mensaje, fecha, USUARIO_id_usuario, CATEDRATICO_id_catedratico, CURSO_id_curso})
+    res.send({mensaje, fecha, USUARIO_id_usuario, CATEDRATICO_id_catedratico, CURSO_id_curso})
 }
 
 

@@ -18,16 +18,16 @@ export const getProf = async (req, res) => {
 
 // Crear un catedratico
 export const createProf = async (req, res) => {
-    const {id_catedratico, nombre, apellido, correo} = req.body
-    const [rows] = await pool.query('INSERT INTO CATEDRATICO (id_catedratico, nombre, apellido, correo) VALUES (?, ?, ?, ?)', 
-     [id_catedratico, nombre, apellido, correo], (err, result) => {
+    const {nombre, apellido, correo} = req.body
+    const [rows] = await pool.query('INSERT INTO CATEDRATICO (nombre, apellido, correo) VALUES  ?, ?, ?)', 
+     [nombre, apellido, correo], (err, result) => {
         if (err){
             console.error("Error: "+err)
             return res.status(500).json(err)
         }
      })
     
-    res.send({id_catedratico, nombre, apellido, correo})
+    res.send({nombre, apellido, correo})
 }
 
 // Actualizar un catedratico
@@ -42,7 +42,7 @@ export const updateProf = async (req, res) => {
         }
      })
     
-    res.send({id_catedratico, nombre, apellido, correo})
+    res.send({nombre, apellido, correo})
 }
 
 

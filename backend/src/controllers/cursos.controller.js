@@ -18,8 +18,8 @@ export const getCourse = async (req, res) => {
 
 // Crear un curso
 export const createCourse = async (req, res) => {
-    const {id_curso, nombre, creditos, area} = req.body
-    const [rows] = await pool.query('INSERT INTO CURSO (id_curso, nombre, creditos, area) VALUES (?, ?, ?, ?)', 
+    const {nombre, creditos, area} = req.body
+    const [rows] = await pool.query('INSERT INTO CURSO (nombre, creditos, area) VALUES (?, ?, ?)', 
      [id_curso, nombre, creditos, area], (err, result) => {
         if (err){
             console.error("Error: "+err)
@@ -42,7 +42,7 @@ export const updateCourse = async (req, res) => {
         }
      })
     
-    res.send({id_curso, nombre, creditos, area})
+    res.send({nombre, creditos, area})
 }
 
 

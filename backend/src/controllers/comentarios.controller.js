@@ -18,16 +18,16 @@ export const getComnt = async (req, res) => {
 
 // Crear un comentario
 export const createComnt = async (req, res) => {
-    const {id_comentario, mensaje, fecha, PUBLICACION_id_publicacion, USUARIO_id_usuario} = req.body
-    const [rows] = await pool.query('INSERT INTO COMENTARIO (id_comentario, mensaje, fecha, PUBLICACION_id_publicacion, USUARIO_id_usuario) VALUES (?, ?, ?, ?, ?)', 
-     [id_comentario, mensaje, fecha, PUBLICACION_id_publicacion, USUARIO_id_usuario], (err, result) => {
+    const {mensaje, fecha, PUBLICACION_id_publicacion, USUARIO_id_usuario} = req.body
+    const [rows] = await pool.query('INSERT INTO COMENTARIO (mensaje, fecha, PUBLICACION_id_publicacion, USUARIO_id_usuario) VALUES (?, ?, ?, ?)', 
+     [mensaje, fecha, PUBLICACION_id_publicacion, USUARIO_id_usuario], (err, result) => {
         if (err){
             console.error("Error: "+err)
             return res.status(500).json(err)
         }
      })
     
-    res.send({id_comentario, mensaje, fecha, PUBLICACION_id_publicacion, USUARIO_id_usuario})
+    res.send({mensaje, fecha, PUBLICACION_id_publicacion, USUARIO_id_usuario})
 }
 
 // Actualizar un comentario
@@ -42,7 +42,7 @@ export const updateComnt = async (req, res) => {
         }
      })
     
-    res.send({id_comentario, mensaje, fecha, PUBLICACION_id_publicacion, USUARIO_id_usuario})
+    res.send({mensaje, fecha, PUBLICACION_id_publicacion, USUARIO_id_usuario})
 }
 
 

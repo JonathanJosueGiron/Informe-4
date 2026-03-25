@@ -1,4 +1,5 @@
 import { pool } from '../db.js'
+import jwt from 'jsonwebtoken'
 
 // Ver todos los usuarios
 export const getUsers = async (req, res) => {
@@ -16,18 +17,82 @@ export const getUser = async (req, res) => {
     res.json(rows[0])
 }
 
-// Crear un usuario
-export const createUser = async (req, res) => {
-    const {id_usuario, registro, nombre, apellido, correo, password} = req.body
-    const [rows] = await pool.query('INSERT INTO usuario (id_usuario, registro, nombre, apellido, correo, password) VALUES (?, ?, ?, ?, ?, ?)', 
-     [id_usuario, registro, nombre, apellido, correo, password], (err, result) => {
+// Buscar por registro y contraseña
+export const userLogin = async (req, res) => {
+    const [rows] = await pool.query('SELECT * FROM usuario WHERE registro = ? AND password = ?', [req.body.registro, req.body.password])
+    if (rows.length <= 0) {
+		console.log("a: "+[rows])
+		return res.status(404).json({message: "Usuario incorrecto."})
+	}
+    const token = jwt.sign({id: rows[0].id_usuario}, "secret", {expiresIn: "1h"})
+    res.cookie("token", token, {
+        httpOnly: true,
+        secure: false,
+    })
+    res.json({message: "Inicio de sesión exitoso."})
+}
+
+// Nueva contraseña
+export const newPassword = async (req, res) => {
+    const {registro, nombre, apellido, correo, password} = req.body
+	
+	const [search] = await pool.query('SELECT * FROM usuario WHERE registro = ? AND correo = ?', [registro, nombre, apellido, correo])
+	console.log(search[0].id_usuario)
+	const id_usuario = search[0].id_usuario
+	
+	console.log(id_usuario)
+	if (search.length === 0){
+		return res.status(404).json({message: "Datos incorrectos."})
+	}
+	
+    const [rows] = await pool.query('UPDATE usuario SET registro = ?, nombre = ?, apellido = ?, correo = ?,password = ? WHERE id_usuario = ?', 
+     [registro, nombre, apellido, correo, password, id_usuario], (err, result) => {
         if (err){
             console.error("Error: "+err)
             return res.status(500).json(err)
         }
      })
-    
-    res.send({id_usuario, registro, nombre, apellido, correo, password})
+	res.json("Datos actualizados.")
+}
+
+// Perfil de inicio de sesión
+
+export const getUserAuth = async (req, res) =>{
+	try{
+		const userId = req.user.id
+		console.log(req.user.id)
+		console.log(userId)
+		const [rows] = await pool.query("SELECT id_usuario, registro FROM usuario WHERE id_usuario = ?", [userId])
+
+		if (rows.length === 0) return res.status(404).json({
+        	message: "Usuario no encontrado."
+    	})
+		res.json(rows[0])
+	} catch (error){
+		console.error(error)
+		res.sendStatus(500)
+	}
+}
+
+
+// Crear un usuario
+export const createUser = async (req, res) => {
+    const {registro, nombre, apellido, correo, password} = req.body
+	console.log(registro)
+	const [search] = await pool.query('SELECT * FROM usuario WHERE registro = ?', [registro])
+	console.log(search)
+	console.log(search.length)
+	if (search.length > 0){
+		return res.status(409).json({message: "Usuario ya existente."})
+	}
+    const [rows] = await pool.query('INSERT INTO usuario (registro, nombre, apellido, correo, password) VALUES (?, ?, ?, ?, ?)', 
+     [registro, nombre, apellido, correo, password], (err, result) => {
+        if (err){
+            console.error("Error: "+err)
+            return res.status(500).json(err)
+        }
+     })
+    res.send({registro, nombre, apellido, correo, password})
 }
 
 // Actualizar un usuario
@@ -42,7 +107,7 @@ export const updateUser = async (req, res) => {
         }
      })
     
-    res.send({id_usuario, nombre, registro, apellido, correo, password})
+    res.send({nombre, registro, apellido, correo, password})
 }
 
 

@@ -9,10 +9,18 @@ import aprCrsRoutes from './routes/cursos_apr.routes.js'
 
 import indexRoutes  from './routes/index.routes.js'
 
+import cors from 'cors'
+import cookieParser from "cookie-parser"
+
 const app = express()
 
 app.use(express.json())
 
+app.use(cors({
+    origin: 'http://localhost:5173',
+    credentials: true
+}))
+app.use(cookieParser())
 app.use(indexRoutes)
 app.use('/api', userRoutes)
 app.use('/api', courseRoutes)

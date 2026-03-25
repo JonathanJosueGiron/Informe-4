@@ -18,16 +18,16 @@ export const getAprCourse = async (req, res) => {
 
 // Crear un curso aprobado
 export const createAprCourse = async (req, res) => {
-    const {id_curso_apr, fecha_apr, USUARIO_id_usuario, CURSO_id_curso} = req.body
-    const [rows] = await pool.query('INSERT INTO CURSO_APR (id_curso_apr, fecha_apr, USUARIO_id_usuario, CURSO_id_curso) VALUES (?, ?, ?, ?)', 
-     [id_curso_apr, fecha_apr, USUARIO_id_usuario, CURSO_id_curso], (err, result) => {
+    const {fecha_apr, USUARIO_id_usuario, CURSO_id_curso} = req.body
+    const [rows] = await pool.query('INSERT INTO CURSO_APR (fecha_apr, USUARIO_id_usuario, CURSO_id_curso) VALUES (?, ?, ?)', 
+     [fecha_apr, USUARIO_id_usuario, CURSO_id_curso], (err, result) => {
         if (err){
             console.error("Error: "+err)
             return res.status(500).json(err)
         }
      })
     
-    res.send({id_curso_apr, fecha_apr, USUARIO_id_usuario, CURSO_id_curso})
+    res.send({fecha_apr, USUARIO_id_usuario, CURSO_id_curso})
 }
 
 // Actualizar un curso aprobado
@@ -42,7 +42,7 @@ export const updateAprCourse = async (req, res) => {
         }
      })
     
-    res.send({id_curso_apr, fecha_apr, USUARIO_id_usuario, CURSO_id_curso})
+    res.send({fecha_apr, USUARIO_id_usuario, CURSO_id_curso})
 }
 
 
