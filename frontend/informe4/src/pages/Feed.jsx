@@ -1,30 +1,24 @@
-import { useState } from 'react'
-import { Button } from '../components/Button.jsx'
+import { Button } from "../components/Button"
+import { Listbox } from "../components/Listbox"
 
-function Feed() {
-  const width  = 320
-  const height   = 55
-  const font = 20
-
-  const [details, setDetails] = useState(null)
-  const [show, setShow]       = useState(false)
-
-  const carga = async () => {
-    const datos = await ApiService.verTodos("xml")
-    console.log(datos)
-    setDetails(datos)
-  }
-  
+function Feed(){
   return(
     <>
-      <div>
-        <Button text={"CARGAR ARCHIVO"}        page={"/subirxml"}           style={{width:width*1.25, height:height*1.5, fontSize:font*2}}/>
-        <Button text={"GESTIONAR CENTROS"}     page={"/gestioncentros"}     style={{width:width*0.9, height:height, fontSize:font}}/>
-        <Button text={"GESTIONAR RUTAS"}       page={"/gestionrutas"}       style={{width:width*0.8, height:height, fontSize:font}}/>
-        <Button text={"GESTIONAR PAQUETES"}    page={"/gestionpaquetes"}    style={{width:width*0.925, height:height, fontSize:font}}/>
-        <Button text={"GESTIONAR MENSAJEROS"}  page={"/gestionmensajeros"}  style={{width:width, height:height, fontSize:font}}/>
-        <Button text={"GESTIONAR SOLICITUDES"} page={"/gestionsolicitudes"} style={{width:width*1.1, height:height, fontSize:font}}/>
+      <h1 style={{fontSize:'3rem', position:'fixed', left:'50%', top:'4%', transform:'translateX(-50%)'}}>PUBLICACIONES</h1>
+      <div className="list">
+        <Listbox objeto={"/publicaciones"}
+        render={ p => (
+          <div className="list-card" key={p.id_publicacion}>
+            <b>Usuario:</b> {p.nombre_usuario} <br/>
+            <b>Fecha:</b> {p.fecha} <br/>
+            <b>Curso:</b> {p.nombre_curso} <br/>
+            <b>Catedratico:</b> {p.nombre_catedratico} <br/><br/>
+            <b>Mensaje:</b> {p.mensaje} <br/>
+            <Button text={"Ver comentarios"} page={`comments/${p.id_publicacion}`}/>
+          </div>
+        )}/>
       </div>
+      <Button text={"SALIR"} page={"/login"} style={{height:60, width:140, fontSize:'1.5rem', position:'fixed', left:'98%', top:'4%', transform:'translateX(-100%)'}}/>
     </>
   )
 }

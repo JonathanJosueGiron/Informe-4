@@ -2,7 +2,18 @@ import { pool } from '../db.js'
 
 // Ver todas las publicaciones
 export const getPublis = async (req, res) => {
-    const [rows] = await pool.query('SELECT * FROM PUBLICACION')
+    const [rows] = await pool.query(`SELECT 
+        p.id_publicacion,
+        p.mensaje, 
+        p.fecha, 
+        u.nombre AS nombre_usuario, 
+        c.nombre AS nombre_catedratico, 
+        cu.nombre AS nombre_curso 
+        FROM PUBLICACION p 
+        JOIN usuario u ON p.USUARIO_id_usuario = u.id_usuario 
+        JOIN catedratico c ON p.CATEDRATICO_id_catedratico = c.id_catedratico 
+        JOIN curso cu ON p.CURSO_id_curso = cu.id_curso`) 
+    
     res.json(rows)
 }
 
@@ -27,7 +38,7 @@ export const createPubli = async (req, res) => {
         }
      })
     
-    res.send({mensaje, fecha, USUARIO_id_usuario, CATEDRATICO_id_catedratico, CURSO_id_curso})
+    res.send("Publicación creada.")
 }
 
 // Actualizar una publicacion
@@ -42,7 +53,7 @@ export const updatePubli = async (req, res) => {
         }
      })
     
-    res.send({mensaje, fecha, USUARIO_id_usuario, CATEDRATICO_id_catedratico, CURSO_id_curso})
+    res.send("Publicación actualizada.")
 }
 
 

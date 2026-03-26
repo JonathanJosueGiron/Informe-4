@@ -1,0 +1,25 @@
+.list{
+    padding: 20px;
+    background-color: rgb(0, 25, 106);
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    text-align: left;
+    max-width: 1000px;
+    width: 90%;
+    height: 400px;
+    border: 3px solid transparent;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-color: rgb(165, 181, 255);
+    overflow-y: auto;
+}
+
+.no_data{
+    font-size: 1.5rem;
+    text-align: center;  
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 0.5px;
+}

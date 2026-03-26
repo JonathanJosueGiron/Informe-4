@@ -4,12 +4,13 @@ import "../components/Box.css"
 import { Button } from "../components/Button.jsx";
 import axios from "../api/axios.jsx";
 import logo from "../assets/fiusac_logo.jpg"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Login(){
 	const { setAuth } = useContext(AuthContext)
 	const userRef = useRef()
 	const errRef  = useRef()
+	const navigate = useNavigate()
   const [user, setUser]     = useState("")
   const [passw, setPassw]   = useState("")
   const [errMsg, setErrMsg] = useState("")
@@ -38,6 +39,7 @@ function Login(){
 			console.log(JSON.stringify(response?.data))
 			const res = await axios.get("/profile")
 			setUser(res.data.registro)
+			navigate('/feed')
 		} catch (err) {
 			if(!err.response){
 				setErrMsg('No hubo respuesta del servidor.')
@@ -57,39 +59,40 @@ function Login(){
 
   return(
 		<>
-		<div style={{position:"fixed", top:"70px", left:"50%", transform:"translateX(-50%)", 
-						display:"flex", flexDirection:"column", alignItems:"center"}}>
-    	<div className="box" style={{height:"460px"}}>
-				<img src={logo}></img>
-      	<div className="element" style={{backgroundColor:"Darkblue"}}>Iniciar sesión</div>
-      	<input 
-					type='text' 
-					id="register" 
-					ref={userRef} 
-					placeholder='Registro académico' 
-					value={user} 
-					onChange={(e) => setUser(e.target.value)}
-					required
-				/>
-
+			<div style={{position:"fixed", top:"70px", left:"50%", transform:"translateX(-50%)", 
+							display:"flex", flexDirection:"column", alignItems:"center"}}>
+			<div className="box" style={{height:"460px"}}>
+					<img src={logo}></img>
+			<div className="element" style={{backgroundColor:"Darkblue"}}>Iniciar sesión</div>
 				<input 
-					type='password' 
-					id="password"
-					placeholder='Contraseña' 
-					value={passw} 
-					onChange={(e) => setPassw(e.target.value)}
-					required
-				/>
-				<Link to="/resetPassword">
-					<p style={{fontSize:"18px", margin:"0", textAlign:"left"}}>Olvidé la contraseña</p>
-				</Link>
-				<p style={{fontSize:"15px", margin:"0"}}>{errMsg}</p>
-    	</div>
-			<div style={{display:"flex", alignItems:"center", gap:"200px"}}>
-				<Button text={"INGRESAR"} onClick={handleLogin}/>
-				<Button text={"REGISTRARSE"} page="/register"/>
+						type='text' 
+						id="register" 
+						ref={userRef} 
+						placeholder='Registro académico' 
+						value={user} 
+						onChange={(e) => setUser(e.target.value)}
+						required
+					/>
+
+					<input 
+						type='password' 
+						id="password"
+						placeholder='Contraseña' 
+						value={passw} 
+						onChange={(e) => setPassw(e.target.value)}
+						required
+					/>
+					<Link to="/resetPassword">
+						<p style={{fontSize:"18px", margin:"0", textAlign:"left"}}>Olvidé la contraseña</p>
+					</Link>
+					<p style={{fontSize:"15px", margin:"0"}}>{errMsg}</p>
 			</div>
-		</div>
+
+				<div style={{display:"flex", alignItems:"center", gap:"200px"}}>
+					<Button text={"INGRESAR"} onClick={handleLogin}/>
+					<Button text={"REGISTRARSE"} page="/register"/>
+				</div>
+			</div>
 		</>
   )
 }

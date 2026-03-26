@@ -1,9 +1,10 @@
 import { Router } from "express";
-import { getComnts, getComnt, createComnt, updateComnt, deleteComnt } from '../controllers/comentarios.controller.js'
+import { getComnts, getComnt, createComnt, updateComnt, deleteComnt, getComntsFromPost } from '../controllers/comentarios.controller.js'
 
 const router = Router()
 
 router.get('/comentarios', getComnts)
+router.get('/publicaciones/:id_publicacion/comentarios', getComntsFromPost)
 router.get('/comentarios/:id_comentario', getComnt)
 router.post('/comentarios', createComnt)
 router.put('/comentarios/:id_comentario', updateComnt)

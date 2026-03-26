@@ -98,11 +98,28 @@ input{
   border-color: rgb(255, 255, 255);
 }
 
+textarea{
+  margin: 1rem;
+  padding: 5px 10px;
+  background-color: rgb(0, 8, 38);
+  color: white;
+  font-size: 1rem;
+  height: 36px;
+  width: 400px;
+  text-align: left;
+  border: 3px solid transparent;
+  border-radius: 20px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  border-color: rgb(255, 255, 255);
+}
+
 .list-card {
-  background-color: #337dfc;
+  background-color: #ffffff;
   padding: 10px 5px 10px 15px;
-  color: #ffffff;
+  font-size: medium;
+  margin: 30px 0px;
+  color: #000000;
   border-width: 4px;
   border-style: outset;
-  border-color: rgb(255, 255, 255);
+  border-color: rgb(0, 0, 0);
 }

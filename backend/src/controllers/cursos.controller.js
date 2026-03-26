@@ -20,14 +20,14 @@ export const getCourse = async (req, res) => {
 export const createCourse = async (req, res) => {
     const {nombre, creditos, area} = req.body
     const [rows] = await pool.query('INSERT INTO CURSO (nombre, creditos, area) VALUES (?, ?, ?)', 
-     [id_curso, nombre, creditos, area], (err, result) => {
+     [nombre, creditos, area], (err, result) => {
         if (err){
             console.error("Error: "+err)
             return res.status(500).json(err)
         }
      })
     
-    res.send({id_curso, nombre, creditos, area})
+    res.send("Curso registrado.")
 }
 
 // Actualizar un curso

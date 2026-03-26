@@ -34,19 +34,22 @@ export const userLogin = async (req, res) => {
 
 // Nueva contraseña
 export const newPassword = async (req, res) => {
-    const {registro, nombre, apellido, correo, password} = req.body
+    const {registro, correo, password} = req.body
 	
-	const [search] = await pool.query('SELECT * FROM usuario WHERE registro = ? AND correo = ?', [registro, nombre, apellido, correo])
-	console.log(search[0].id_usuario)
-	const id_usuario = search[0].id_usuario
-	
-	console.log(id_usuario)
+	const [search] = await pool.query('SELECT * FROM usuario WHERE registro = ? AND correo = ?', [registro, correo])
 	if (search.length === 0){
 		return res.status(404).json({message: "Datos incorrectos."})
 	}
+	console.log(search[0].id_usuario)
+	const id_usuario = search[0].id_usuario
+	const past_passw = search[0].password
+	if (password == past_passw){
+		return res.status(409).json({message: "La contraseña debe ser diferente a la anterior."})
+	}
 	
-    const [rows] = await pool.query('UPDATE usuario SET registro = ?, nombre = ?, apellido = ?, correo = ?,password = ? WHERE id_usuario = ?', 
-     [registro, nombre, apellido, correo, password, id_usuario], (err, result) => {
+	
+    const [rows] = await pool.query('UPDATE usuario SET password = ? WHERE id_usuario = ?', 
+     [password, id_usuario], (err, result) => {
         if (err){
             console.error("Error: "+err)
             return res.status(500).json(err)

@@ -12,8 +12,6 @@ export function ResetPassword(){
 	const userRef = useRef()
 	const errRef  = useRef()
   const [register, setRegister] = useState("")
-  const [name, setName]         = useState("")
-	const [surname, setSurname]   = useState("")
 	const [email, setEmail]		  = useState("")
 	const [password, setPassword] = useState("")
 
@@ -27,19 +25,17 @@ export function ResetPassword(){
 	useEffect(() =>{
 		setErrMsg('')
 		setSuccess(false)
-  }, [register, name])
+  }, [register])
 
 	const handleRegister = async () => {
-		if (register == "" || name == "" || surname == "" || email == "" || password == ""){
+		if (register == "" || email == "" || password == ""){
 			setErrMsg("Ingresa todos los datos.")
 			return
 		}
 		try{
-			const response = await axios.post("/usuarios",
+			const response = await axios.put("/resetpassword",
 				JSON.stringify({
-					registro: register, 
-					nombre: name,
-					apellido: surname,
+					registro: register,
 					correo: email,
 					password: password
 				}),
@@ -53,12 +49,14 @@ export function ResetPassword(){
 				setErrMsg('No hubo respuesta del servidor.')
 			} else if (err.response.status === 400){
 				setErrMsg('Ingresa todos los datos.')
+			} else if (err.response.status === 404){
+				setErrMsg('Datos incorrectos.')
 			} else if (err.response.status === 401){
 				setErrMsg('Acción no autorizada.')
 			} else if (err.response.status === 409){
-				setErrMsg('Ingresa los datos correctos.')
+				setErrMsg(err.response?.data?.message || "Error")
 			} else {
-				setErrMsg('Registro fallido.')
+				setErrMsg('.')
 			}
 			errRef.current.focus()
 			console.log(err)
@@ -67,13 +65,13 @@ export function ResetPassword(){
 
   return(
 	<>	
-		<div style={{position:"fixed", top:"40px", left:"50%", transform:"translateX(-50%)", 
+		<div style={{position:"fixed", top:"100px", left:"50%", transform:"translateX(-50%)", 
 						display:"flex", flexDirection:"column", alignItems:"center"}}>
-			<div className="box" style={{height:"550px"}}>
+			<div className="box" style={{height:"400px"}}>
 			<div className="element" style={{backgroundColor:"Darkblue"}}>Nueva contraseña</div>
 			<input 
 				type='text' 
-				id="regRegister" 
+				id="resRegister" 
 				ref={userRef} 
 				placeholder='Registro académico' 
 				value={register} 
@@ -83,7 +81,7 @@ export function ResetPassword(){
 
 			<input 
 				type='text' 
-				id="regEmail"
+				id="resEmail"
 				placeholder='Correo electrónico' 
 				value={email}
 				onChange={(e) => setEmail(e.target.value)}
@@ -92,7 +90,7 @@ export function ResetPassword(){
 
 			<input 
 				type='password' 
-				id="regPassword"
+				id="resPassword"
 				placeholder='Nueva contraseña' 
 				value={password} 
 				onChange={(e) => setPassword(e.target.value)}
