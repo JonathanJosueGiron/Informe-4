@@ -20,7 +20,7 @@ function SearchUser(){
         )}/>
       </div>
         <div style={{height:30, width:"840px", fontSize:'2rem', position:'fixed', left:'50%', top:'80%', transform:'translateX(-50%)'}}>
-            <Button text={"VOLVER"} page="/postcreate"/>
+            <Button text={"VOLVER"} page="/feed"/>
         </div>
         
       
