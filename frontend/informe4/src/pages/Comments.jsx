@@ -7,6 +7,7 @@ import axios from "../api/axios"
 function Comments(){
   const {id} = useParams()
   const API = `publicaciones/${id}/comentarios`
+  
   const [postMsg, setPostMsg] = useState("")
     useEffect(() => {
       const carga = async () => {

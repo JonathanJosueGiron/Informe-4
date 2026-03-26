@@ -16,6 +16,21 @@ export const getUser = async (req, res) => {
     res.json(rows[0])
 }
 
+// Ver un usuario mediante su número de registro
+export const getUserByReg = async (req, res) => {
+	let registro = -1
+	if (req.params.id_usuario){
+		registro = req.params.id_usuario
+	}else{
+        registro = req.user.id
+    }
+    const [rows] = await pool.query('SELECT registro, nombre, apellido, correo FROM usuario WHERE id_usuario = ?', [registro])
+    if (rows.length <= 0) return res.status(404).json({
+        message: "Usuario no encontrado."
+    })
+    res.json(rows[0])
+}
+
 // Buscar por registro y contraseña
 export const userLogin = async (req, res) => {
     const [rows] = await pool.query('SELECT * FROM usuario WHERE registro = ? AND password = ?', [req.body.registro, req.body.password])
@@ -56,7 +71,6 @@ export const newPassword = async (req, res) => {
 }
 
 // Perfil de inicio de sesión
-
 export const getUserAuth = async (req, res) =>{
 	try{
 		const userId = req.user.id

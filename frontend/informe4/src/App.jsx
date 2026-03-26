@@ -8,6 +8,8 @@ import ResetPassword from './pages/ResetPassword.jsx'
 import Comments from './pages/Comments.jsx'
 import CreateComment from './pages/CreateComment.jsx'
 import CreatePost from './pages/CreatePost.jsx'
+import Profile from './pages/Profile.jsx'
+import SearchUser from './pages/SearchUser.jsx'
 
 
 function App() {
@@ -17,7 +19,9 @@ function App() {
   const feed       = "/feed"
   const comments   = "/comments/:id"
   const createPost = "/postcreate"
-  const filter     = "/filter"
+  const profile    = "/perfil"
+  const search     = "/buscarusuario"
+
   return (
     <Routes>
       <Route path={feed} element={<Feed/>}/>
@@ -27,9 +31,10 @@ function App() {
       <Route path={resetPassw} element={<ResetPassword/>}/>
       <Route path={feed+comments} element={<Comments/>}/>
       <Route path={feed+comments+"/post"} element={<CreateComment/>}/>
-
       <Route path={createPost} element={<CreatePost/>}/>
-      <Route path={filter} element={<Feed/>}/>
+			<Route path={search} element={<SearchUser/>}/>
+      <Route path={profile} element={<Profile/>}/>
+			<Route path={profile+"/:registro"} element={<Profile/>}/>
 
     </Routes>
   )

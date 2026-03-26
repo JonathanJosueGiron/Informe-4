@@ -72,6 +72,8 @@ function Feed(){
         
       
       <Button text={"SALIR"} page={"/login"} style={{height:60, width:140, fontSize:'1.5rem', position:'fixed', left:'98%', top:'4%', transform:'translateX(-100%)'}}/>
+      <Button text={"VER PERFIL"} page={"/perfil"} style={{height:60, width:200, fontSize:'1.5rem', position:'fixed', left:'2%', top:'4%', transform:'translateX(0%)'}}/>
+      <Button text={"BUSCAR USUARIO"} page={"/buscarusuario"} style={{height:60, width:300, fontSize:'1.5rem', position:'fixed', left:'15%', top:'4%', transform:'translateX(0%)'}}/>
     </>
   )
 }

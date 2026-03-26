@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getUsers, getUser, createUser, updateUser, deleteUser, userLogin, getUserAuth, newPassword} from '../controllers/usuarios.controller.js'
+import { getUsers, getUser, createUser, updateUser, deleteUser, userLogin, getUserAuth, newPassword, getUserByReg} from '../controllers/usuarios.controller.js'
 import { auth } from "../middleware/Auth.js";
 const router = Router()
 
@@ -12,5 +12,9 @@ router.delete('/usuarios/:id_usuario', deleteUser)
 router.post('/login', userLogin)
 router.get('/profile', auth, getUserAuth)
 router.put('/resetpassword',newPassword)
+
+router.get('/verperfil', auth, getUserByReg)
+router.get('/verperfil/:id_usuario', getUserByReg)
+
 
 export default router
