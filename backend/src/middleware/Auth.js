@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken'
 
 export function auth(req, res, next){
-    const token = req.cookies.token
+    const token = req.cookies?.token
     if (!token) return res.sendStatus(401)
     try{
         const decoded = jwt.verify(token, "secret")

@@ -24,7 +24,7 @@ export const userLogin = async (req, res) => {
 		console.log("a: "+[rows])
 		return res.status(404).json({message: "Usuario incorrecto."})
 	}
-    const token = jwt.sign({id: rows[0].id_usuario}, "secret", {expiresIn: "1h"})
+    const token = jwt.sign({id: rows[0].id_usuario}, "secret", {expiresIn: "2h"})
     res.cookie("token", token, {
         httpOnly: true,
         secure: false,

@@ -16,7 +16,8 @@ export const getComntsFromPost = async (req, res) => {
         FROM COMENTARIO com
         JOIN usuario u ON com.USUARIO_id_usuario = u.id_usuario
         JOIN publicacion p ON p.id_publicacion = PUBLICACION_id_publicacion
-        WHERE PUBLICACION_id_publicacion = ?`, [req.params.id_publicacion])
+        WHERE PUBLICACION_id_publicacion = ?
+        ORDER BY com.fecha DESC`, [req.params.id_publicacion])
     res.json(rows)
 }
 
@@ -32,6 +33,7 @@ export const getComnt = async (req, res) => {
 
 // Crear un comentario
 export const createComnt = async (req, res) => {
+    console.log(req.user.id)
     const USUARIO_id_usuario = req.user.id
     const {mensaje, PUBLICACION_id_publicacion} = req.body
     const [rows] = await pool.query('INSERT INTO COMENTARIO (mensaje, fecha, PUBLICACION_id_publicacion, USUARIO_id_usuario) VALUES (?, CURDATE(), ?, ?)', 

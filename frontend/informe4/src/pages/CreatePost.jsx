@@ -8,16 +8,18 @@ import { Superpos } from "../components/Superpos.jsx";
 import axios from "../api/axios.jsx";
 import { useParams } from "react-router-dom";
 
-export function CreateComment(){
+export function CreatePost(){
 
 	const { setAuth } = useContext(AuthContext)
 	const userRef = useRef()
 	const errRef  = useRef()
 
 	const {id} = useParams()
-  const [comment, setComment] = useState("")
+  const [post, setPost]           = useState("")
+  const [professor, setProfessor] = useState("")
+  const [course, setCourse]       = useState("")
 	
-  const [errMsg, setErrMsg]     = useState("")
+  const [errMsg, setErrMsg]   = useState("")
   const [success, setSuccess] = useState(false)
   useEffect(() =>{
 		if (userRef.current){
@@ -27,18 +29,23 @@ export function CreateComment(){
 	useEffect(() =>{
 		setErrMsg('')
 		setSuccess(false)
-  }, [comment])
+  }, [post])
 
 	const handleRegister = async () => {
-		if (comment == ""){
+        if (professor == "" || course == ""){
+			setErrMsg("Selecciona todos los datos.")
+			return
+		}
+		if (post == ""){
 			setErrMsg("el comentario no puede quedar vacío.")
 			return
 		}
 		try{
 			const response = await axios.post("/comentarios",
 				JSON.stringify({
-					mensaje: comment,
-					PUBLICACION_id_publicacion: id
+					mensaje: post,
+                    CATEDRATICO_id_catedratico: professor,
+                    CURSO_id_curso: course
 				}),
 				{
 					headers: {'Content-Type': 'application/json'},
@@ -67,15 +74,15 @@ export function CreateComment(){
 		<div style={{position:"fixed", top:"40px", left:"50%", transform:"translateX(-50%)", 
 						display:"flex", flexDirection:"column", alignItems:"center"}}>
 			<div className="box" style={{height:"550px", width:"1000px"}}>
-			<div className="element" style={{backgroundColor:"Darkblue"}}>Comentar</div>
+			<div className="element" style={{backgroundColor:"Darkblue"}}>Publicar</div>
 			<br/>
 			<textarea 
 				id="comment"
-				placeholder='Escribe un comentario...' 
-				value={comment} 	
-				onChange={(e) => setComment(e.target.value)}
+				placeholder='Describe tu experiencia...' 
+				value={post} 	
+				onChange={(e) => setPost(e.target.value)}
 				required
-				style={{height:"300px", width:"800px"}}
+				style={{height:"200px", width:"800px"}}
 			/>
 			<p style={{fontSize:"20px", margin:"0"}}>{errMsg}</p>
 			</div>
@@ -99,4 +106,4 @@ export function CreateComment(){
   )
 }
 
-export default CreateComment
+export default CreatePost

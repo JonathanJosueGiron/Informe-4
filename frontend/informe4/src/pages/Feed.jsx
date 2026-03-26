@@ -18,6 +18,12 @@ function Feed(){
           </div>
         )}/>
       </div>
+      <div style={{height:30, width:"840px", fontSize:'1.5rem', position:'fixed', left:'50%', top:'80%', transform:'translateX(-50%)'}}>
+        <div style={{display:"flex", alignItems:"center", gap:"200px"}}>
+            <Button text={"BUSCAR"} page="/filter"/>
+            <Button text={"PLUBICAR"} page="/postcreate"/>
+        </div>
+      </div>
       <Button text={"SALIR"} page={"/login"} style={{height:60, width:140, fontSize:'1.5rem', position:'fixed', left:'98%', top:'4%', transform:'translateX(-100%)'}}/>
     </>
   )

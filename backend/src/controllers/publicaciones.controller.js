@@ -12,14 +12,15 @@ export const getPublis = async (req, res) => {
         FROM PUBLICACION p 
         JOIN usuario u ON p.USUARIO_id_usuario = u.id_usuario 
         JOIN catedratico c ON p.CATEDRATICO_id_catedratico = c.id_catedratico 
-        JOIN curso cu ON p.CURSO_id_curso = cu.id_curso`) 
+        JOIN curso cu ON p.CURSO_id_curso = cu.id_curso
+        ORDER BY p.fecha DESC`) 
     
     res.json(rows)
 }
 
 // Ver una publicacion
 export const getPubli = async (req, res) => {
-    console.log(req.params)
+    
     const [rows] = await pool.query('SELECT * FROM PUBLICACION WHERE id_publicacion = ?', [req.params.id_publicacion])
     if (rows.length <= 0) return res.status(404).json({
         message: "publicacion no encontrada."
@@ -29,9 +30,10 @@ export const getPubli = async (req, res) => {
 
 // Crear una publicacion
 export const createPubli = async (req, res) => {
-    const {mensaje, fecha, USUARIO_id_usuario, CATEDRATICO_id_catedratico, CURSO_id_curso} = req.body
-    const [rows] = await pool.query('INSERT INTO PUBLICACION (mensaje, fecha, USUARIO_id_usuario, CATEDRATICO_id_catedratico, CURSO_id_curso) VALUES (?, ?, ?, ?, ?)', 
-     [mensaje, fecha, USUARIO_id_usuario, CATEDRATICO_id_catedratico, CURSO_id_curso], (err, result) => {
+    USUARIO_id_usuario = req.user.id
+    const {mensaje, CATEDRATICO_id_catedratico, CURSO_id_curso} = req.body
+    const [rows] = await pool.query('INSERT INTO PUBLICACION (mensaje, fecha, USUARIO_id_usuario, CATEDRATICO_id_catedratico, CURSO_id_curso) VALUES (?, CURDATE(), ?, ?, ?)', 
+     [mensaje, USUARIO_id_usuario, CATEDRATICO_id_catedratico, CURSO_id_curso], (err, result) => {
         if (err){
             console.error("Error: "+err)
             return res.status(500).json(err)

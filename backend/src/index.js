@@ -21,6 +21,7 @@ app.use(cors({
     credentials: true
 }))
 app.use(cookieParser())
+
 app.use(indexRoutes)
 app.use('/api', userRoutes)
 app.use('/api', courseRoutes)
