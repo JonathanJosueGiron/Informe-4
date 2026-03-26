@@ -9,7 +9,6 @@ export const getUsers = async (req, res) => {
 
 // Ver un usuario
 export const getUser = async (req, res) => {
-    console.log(req.params)
     const [rows] = await pool.query('SELECT * FROM usuario WHERE id_usuario = ?', [req.params.id_usuario])
     if (rows.length <= 0) return res.status(404).json({
         message: "Usuario no encontrado."
@@ -21,7 +20,6 @@ export const getUser = async (req, res) => {
 export const userLogin = async (req, res) => {
     const [rows] = await pool.query('SELECT * FROM usuario WHERE registro = ? AND password = ?', [req.body.registro, req.body.password])
     if (rows.length <= 0) {
-		console.log("a: "+[rows])
 		return res.status(404).json({message: "Usuario incorrecto."})
 	}
     const token = jwt.sign({id: rows[0].id_usuario}, "secret", {expiresIn: "2h"})
@@ -40,7 +38,6 @@ export const newPassword = async (req, res) => {
 	if (search.length === 0){
 		return res.status(404).json({message: "Datos incorrectos."})
 	}
-	console.log(search[0].id_usuario)
 	const id_usuario = search[0].id_usuario
 	const past_passw = search[0].password
 	if (password == past_passw){
@@ -63,8 +60,6 @@ export const newPassword = async (req, res) => {
 export const getUserAuth = async (req, res) =>{
 	try{
 		const userId = req.user.id
-		console.log(req.user.id)
-		console.log(userId)
 		const [rows] = await pool.query("SELECT id_usuario, registro FROM usuario WHERE id_usuario = ?", [userId])
 
 		if (rows.length === 0) return res.status(404).json({
@@ -81,10 +76,7 @@ export const getUserAuth = async (req, res) =>{
 // Crear un usuario
 export const createUser = async (req, res) => {
     const {registro, nombre, apellido, correo, password} = req.body
-	console.log(registro)
 	const [search] = await pool.query('SELECT * FROM usuario WHERE registro = ?', [registro])
-	console.log(search)
-	console.log(search.length)
 	if (search.length > 0){
 		return res.status(409).json({message: "Usuario ya existente."})
 	}
@@ -117,7 +109,6 @@ export const updateUser = async (req, res) => {
 // Eliminar un usuario
 export const deleteUser = async (req, res) => {
     const [result] = await pool.query('DELETE FROM usuario WHERE id_usuario = ?', [req.params.id_usuario])
-    console.log(result)
     if (result.affectedRows <= 0) return res.status(404).json({
         message: "Usuario no encontrado."
     })

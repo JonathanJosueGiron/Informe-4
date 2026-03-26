@@ -1,17 +1,13 @@
 import React from "react";
-import { Listado } from "../Listado/Listado";
+import { Listbox } from "./Listbox";
 import "./selector.css"
-export function Selector({valor, onChange, objeto, textoSinSeleccion, style}){
-  // valor = valor que obtiene la caja
-  // onChange = función cuando cambia el valor
-  // objeto = dirección para obtener la lista (api/"objeto")
-  // textoSinSelección = cuando no haya nada seleccionado
+export function Selector({value, onChange, object, emptyText, style, valueKey, labelKey}){
   return(
-    <select className="selector" style={style} value={valor} onChange={e => onChange(e.target.value)}>
-      <option disabled value="" style={{color:"gray"}}>- {textoSinSeleccion} -</option>
-      <Listado objeto={objeto} wrapper={React.Fragment}
+    <select className="selector" style={style} value={value} onChange={e => onChange(e.target.value)}>
+      <option value="" style={{color:"gray"}}>- {emptyText} -</option>
+      <Listbox noData={"Sin datos."} objeto={object} wrapper={React.Fragment}
       render={e =>(
-        <option key={e.id} value={e.id}>{e.id}</option>
+        <option key={e[valueKey]} value={e[valueKey]}>{e[labelKey]}</option>
       )}/>
     </select>
   )

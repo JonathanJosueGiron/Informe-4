@@ -6,13 +6,17 @@ import axios from "../api/axios"
 
 function Comments(){
   const {id} = useParams()
-  const URL = `publicaciones/${id}/comentarios`
+  const API = `publicaciones/${id}/comentarios`
   const [postMsg, setPostMsg] = useState("")
     useEffect(() => {
       const carga = async () => {
-        const datos = await axios.get(URL)
-        setPostMsg(datos.data[0].mensaje_publicacion)
-        
+        const datos = await axios.get(API)
+        if (datos.data[0]){
+          setPostMsg(datos.data[0].mensaje_publicacion)
+        }else{
+          const publicacion = await axios.get(`publicaciones/${id}`)
+          setPostMsg(publicacion.data.mensaje)
+        }
       }
       carga()
     }, [])
@@ -20,7 +24,7 @@ function Comments(){
     <>
       <div className="list-card" key={id} style={{width:'800px', height:'100px', maxHeight:'100px', fontSize:'1rem', position:'fixed', left:'50%', top:'0%', transform:'translateX(-50%)', textAlign:'left', overflowY:'auto'}}>{postMsg}</div>
       <div className="list">
-        <Listbox objeto={URL}
+        <Listbox objeto={API} noData={"Sin comentarios."}
         render={ com => (
           <div className="list-card" key={com.id_comentario}>
             <b>Usuario:</b> {com.nombre_usuario } <br/>

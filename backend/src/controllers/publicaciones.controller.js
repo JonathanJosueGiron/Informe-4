@@ -30,7 +30,7 @@ export const getPubli = async (req, res) => {
 
 // Crear una publicacion
 export const createPubli = async (req, res) => {
-    USUARIO_id_usuario = req.user.id
+    const USUARIO_id_usuario = req.user.id
     const {mensaje, CATEDRATICO_id_catedratico, CURSO_id_curso} = req.body
     const [rows] = await pool.query('INSERT INTO PUBLICACION (mensaje, fecha, USUARIO_id_usuario, CATEDRATICO_id_catedratico, CURSO_id_curso) VALUES (?, CURDATE(), ?, ?, ?)', 
      [mensaje, USUARIO_id_usuario, CATEDRATICO_id_catedratico, CURSO_id_curso], (err, result) => {
@@ -62,9 +62,53 @@ export const updatePubli = async (req, res) => {
 // Eliminar una publicacion
 export const deletePubli = async (req, res) => {
     const [result] = await pool.query('DELETE FROM PUBLICACION WHERE id_publicacion = ?', [req.params.id_publicacion])
-    console.log(result)
     if (result.affectedRows <= 0) return res.status(404).json({
         message: "publicacion no encontrada."
     })
     res.sendStatus(204)
+}
+
+// Filtro
+export const filter = async (req, res) => {
+	const {id_catedratico, id_curso, nombre_catedratico, nombre_curso} = req.body
+	console.log(req.body)
+	let query = `SELECT 
+    p.id_publicacion,
+    p.mensaje, 
+    p.fecha, 
+    u.nombre AS nombre_usuario, 
+    c.nombre AS nombre_catedratico, 
+    cu.nombre AS nombre_curso 
+    FROM PUBLICACION p 
+    JOIN usuario u ON p.USUARIO_id_usuario = u.id_usuario 
+    JOIN catedratico c ON p.CATEDRATICO_id_catedratico = c.id_catedratico 
+    JOIN curso cu ON p.CURSO_id_curso = cu.id_curso
+		WHERE 1=1 `
+	let params = []
+
+	if (id_catedratico){
+		query += "AND p.CATEDRATICO_id_catedratico = ? ORDER BY p.fecha DESC"
+		params.push(id_catedratico)
+	}
+
+	if (nombre_catedratico){
+		query += "AND c.nombre LIKE ? ORDER BY p.fecha DESC"
+		params.push(`%${nombre_catedratico}%`)
+	}
+
+	if (id_curso){
+		query += "AND p.CURSO_id_curso = ? ORDER BY p.fecha DESC"
+		params.push(id_curso)
+	}
+
+	if (nombre_curso){
+		query += "AND cu.nombre LIKE ? ORDER BY p.fecha DESC"
+		params.push(`%${nombre_curso}%`)
+	}
+	console.log(id_catedratico)
+	console.log(id_curso)
+	console.log(query)
+	
+  const [rows] = await pool.query(query, params)
+  res.json(rows)
 }

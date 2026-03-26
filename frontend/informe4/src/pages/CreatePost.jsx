@@ -7,6 +7,7 @@ import { Superpos } from "../components/Superpos.jsx";
 
 import axios from "../api/axios.jsx";
 import { useParams } from "react-router-dom";
+import { Selector } from "../components/Selector.jsx";
 
 export function CreatePost(){
 
@@ -41,7 +42,7 @@ export function CreatePost(){
 			return
 		}
 		try{
-			const response = await axios.post("/comentarios",
+			const response = await axios.post("/publicaciones",
 				JSON.stringify({
 					mensaje: post,
                     CATEDRATICO_id_catedratico: professor,
@@ -75,20 +76,21 @@ export function CreatePost(){
 						display:"flex", flexDirection:"column", alignItems:"center"}}>
 			<div className="box" style={{height:"550px", width:"1000px"}}>
 			<div className="element" style={{backgroundColor:"Darkblue"}}>Publicar</div>
-			<br/>
+            <Selector value={professor} onChange={setProfessor} object={"catedraticos"} emptyText={"Selecciona un profesor"} valueKey="id_catedratico" labelKey="nombre"/>
+            <Selector value={course} onChange={setCourse} object={"cursos"} emptyText={"Selecciona un curso"} valueKey="id_curso" labelKey="nombre"/>
 			<textarea 
 				id="comment"
 				placeholder='Describe tu experiencia...' 
 				value={post} 	
 				onChange={(e) => setPost(e.target.value)}
 				required
-				style={{height:"200px", width:"800px"}}
+				style={{height:"250px", width:"800px"}}
 			/>
 			<p style={{fontSize:"20px", margin:"0"}}>{errMsg}</p>
 			</div>
 			<div style={{display:"flex", alignItems:"center", gap:"200px"}}>
-				<Button text={"PUBLICAR"} onClick={handleRegister}/>
-				<Button text={"VOLVER"} page={`/feed/comments/${id}`}/>
+				<Button text={"VOLVER"} page={`/feed`}/>
+                <Button text={"PUBLICAR"} onClick={handleRegister}/>
 			</div>
 		</div>
 		
@@ -97,7 +99,7 @@ export function CreatePost(){
 				<Superpos titulo={"Comentario publicado"} texto={"Se ha publicado el comentario."}/>
 				<div style={{display:"flex", alignItems:"center", gap:"200px", position:"fixed", 
 												top:"60%", left:"50%", transform:"translateX(-50%)", zIndex:9999}}>
-					<Button text={"VOLVER"} page={`/feed/comments/${id}`}/>
+					<Button text={"VOLVER"} page={`/feed`}/>
 				</div>
 			</div>
 		}

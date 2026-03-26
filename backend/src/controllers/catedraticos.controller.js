@@ -8,7 +8,6 @@ export const getProfs = async (req, res) => {
 
 // Ver un catedratico
 export const getProf = async (req, res) => {
-    console.log(req.params)
     const [rows] = await pool.query('SELECT * FROM CATEDRATICO WHERE id_catedratico = ?', [req.params.id_catedratico])
     if (rows.length <= 0) return res.status(404).json({
         message: "catedratico no encontrado."
@@ -49,7 +48,6 @@ export const updateProf = async (req, res) => {
 // Eliminar un catedratico
 export const deleteProf = async (req, res) => {
     const [result] = await pool.query('DELETE FROM CATEDRATICO WHERE id_catedratico = ?', [req.params.id_catedratico])
-    console.log(result)
     if (result.affectedRows <= 0) return res.status(404).json({
         message: "catedratico no encontrado."
     })

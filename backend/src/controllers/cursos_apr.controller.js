@@ -8,7 +8,6 @@ export const getAprCourses = async (req, res) => {
 
 // Ver un curso aprobado
 export const getAprCourse = async (req, res) => {
-    console.log(req.params)
     const [rows] = await pool.query('SELECT * FROM CURSO_APR WHERE id_curso_apr = ?', [req.params.id_curso])
     if (rows.length <= 0) return res.status(404).json({
         message: "curso no encontrado."
@@ -49,7 +48,6 @@ export const updateAprCourse = async (req, res) => {
 // Eliminar un curso aprobado
 export const deleteAprCourse = async (req, res) => {
     const [result] = await pool.query('DELETE FROM CURSO_APR WHERE id_curso_apr = ?', [req.params.id_curso])
-    console.log(result)
     if (result.affectedRows <= 0) return res.status(404).json({
         message: "curso no encontrado."
     })

@@ -23,7 +23,6 @@ export const getComntsFromPost = async (req, res) => {
 
 // Ver un comentario
 export const getComnt = async (req, res) => {
-    console.log(req.params)
     const [rows] = await pool.query('SELECT * FROM COMENTARIO WHERE id_comentario = ?', [req.params.id_comentario])
     if (rows.length <= 0) return res.status(404).json({
         message: "comentario no encontrado."
@@ -33,7 +32,6 @@ export const getComnt = async (req, res) => {
 
 // Crear un comentario
 export const createComnt = async (req, res) => {
-    console.log(req.user.id)
     const USUARIO_id_usuario = req.user.id
     const {mensaje, PUBLICACION_id_publicacion} = req.body
     const [rows] = await pool.query('INSERT INTO COMENTARIO (mensaje, fecha, PUBLICACION_id_publicacion, USUARIO_id_usuario) VALUES (?, CURDATE(), ?, ?)', 
@@ -66,7 +64,6 @@ export const updateComnt = async (req, res) => {
 // Eliminar un comentario
 export const deleteComnt = async (req, res) => {
     const [result] = await pool.query('DELETE FROM COMENTARIO WHERE id_comentario = ?', [req.params.id_comentario])
-    console.log(result)
     if (result.affectedRows <= 0) return res.status(404).json({
         message: "comentario no encontrado."
     })
